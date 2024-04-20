@@ -1,0 +1,129 @@
+/* Font faces */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Inter Regular"), local("Inter-Regular"),
+      url("assets/fonts/static/Inter-Regular.ttf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Inter SemiBold"), local("Inter-SemiBold"),
+      url("assets/fonts/static/Inter-SemiBold.ttf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Inter Bold"), local("Inter-Bold"),
+      url("assets/fonts/static/Inter-Bold.ttf") format("opentype");
+  }
+  
+  /* General reset */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    /* Colors */
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 20%);
+    --dark-grey: hsl(0, 0%, 12%);
+    --off-black: hsl(0, 0%, 8%);
+  
+    /* Body copy */
+    --body-fs: 14px;
+  }
+  
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--off-black);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    place-items: center;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: var(--body-fs);
+    padding: 1.5em 0;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* .card styling */
+  .card {
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+    width: min(400px, 100% - 3em);
+  }
+  
+  .card > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .card__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .img-wrapper {
+    width: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  
+  .location {
+    margin-top: 0.5rem;
+    color: var(--green);
+    font-weight: 600;
+  }
+  
+  .links {
+    list-style-type: none;
+    padding-left: 0;
+    width: 100%;
+  }
+  
+  .links > li + li {
+    margin-top: 1rem;
+  }
+  
+  .links > li > a {
+    display: block;
+    text-align: center;
+    background-color: var(--grey);
+    padding: 1rem 0;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .links > li > a:hover,
+  .links > li > a:focus-visible {
+    background-color: var(--green);
+    color: var(--grey);
+    outline: none;
+  }
+  
